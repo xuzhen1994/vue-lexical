@@ -1,9 +1,9 @@
 <template>
-    <div id="vue-lexical-plaintext" contenteditable="true"><slot></slot></div>
+    <div id="vue-lexical-richtext" contenteditable="true"><slot></slot></div>
 </template>
 <script>
 import {createEditor} from 'lexical'
-import {registerPlainText} from '@lexical/plain-text'
+import {registerRichText} from '@lexical/rich-text'
 export default {
     props: {
         config: {
@@ -24,14 +24,14 @@ export default {
     },
     mounted() {
         const editor = createEditor(this.config)
-        registerPlainText(editor, undefined)
-        const rootEle = this.rootNode ? this.rootNode : document.getElementById("vue-lexical-plaintext")
+        registerRichText(editor, undefined)
+        const rootEle = this.rootNode ? this.rootNode : document.getElementById("vue-lexical-richtext")
         editor.setRootElement(rootEle)
     },
 }
 </script>
 <style scoped>
-    #vue-lexical-plaintext {
+    #vue-lexical-richtext {
         min-height: 120px;
         background: #ddd;
     }
