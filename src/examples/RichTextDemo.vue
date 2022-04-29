@@ -7,9 +7,7 @@
 import RichText from '@/components/RichText.vue'
 export default {
   components: { RichText },
-    
 }
 </script>
 <style scoped>
-    
 </style>
